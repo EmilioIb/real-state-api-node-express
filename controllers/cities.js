@@ -24,7 +24,7 @@ class CitiesController {
   getCitiesByName = async (req, res, next) => {
     try {
       const { name } = req.query;
-      const { code, ...response } = await citiesModel.getCitiesbyName(name);
+      const { code, ...response } = await citiesModel.getCitiesByName(name);
       return res.status(code).json(response);
     } catch (error) {
       next(error);

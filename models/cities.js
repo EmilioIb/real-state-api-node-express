@@ -21,7 +21,7 @@ class CitiesModel {
     }
   };
 
-  getCitiesbyName = async name => {
+  getCitiesByName = async name => {
     try {
       const query = `select cities_get_cities_by_name($1);`;
       const res = await executeQuery(query, [name], true);

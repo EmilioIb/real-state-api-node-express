@@ -14,10 +14,13 @@ router.get('/from-state', citiesController.getCitiesFromState);
 // * Get cities based on name
 router.get('/by-name', citiesController.getCitiesByName);
 
+// * Create city
 router.post('/', citiesController.insertCity);
 
+// * Update city
 router.put('/:cityId', citiesController.updateCity);
 
+// * Delete city
 router.delete('/:cityId', citiesController.deleteCity);
 
 app.use('/cities', router);
