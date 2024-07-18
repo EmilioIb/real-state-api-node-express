@@ -2,12 +2,12 @@ const express = require('express');
 const app = express();
 const router = express.Router();
 
-const { categoriesController } = require('../controllers/index.js');
+const { rolesController } = require('../controllers/index.js');
 // const { projectsMiddleware } = require('../middlewares//index.middleware');
 
-// * Get all categories
-router.get('/', categoriesController.getCategories);
+// * Get admin and advisor roles
+router.get('/admin-advisor', rolesController.getAdminAdvisorRoles);
 
-app.use('/categories', router);
+app.use('/operations', router);
 
 module.exports = app;
