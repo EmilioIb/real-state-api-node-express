@@ -8,6 +8,6 @@ const { rolesController } = require('../controllers/index.js');
 // * Get admin and advisor roles
 router.get('/admin-advisor', rolesController.getAdminAdvisorRoles);
 
-app.use('/operations', router);
+app.use('/roles', router);
 
 module.exports = app;

@@ -6,5 +6,6 @@ app.use(require('./states.js'));
 app.use(require('./categories.js'));
 app.use(require('./operations.js'));
 app.use(require('./roles.js'));
+app.use(require('./adminsAdvisors.js'));
 
 module.exports = app;
