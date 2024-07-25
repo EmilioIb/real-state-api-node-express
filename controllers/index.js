@@ -4,6 +4,7 @@ const categoriesController = require('./categories.js');
 const operationsController = require('./operations.js');
 const rolesController = require('./roles.js');
 const adminsAdvisorsController = require('./adminsAdvisors.js');
+const profileController = require('./profile.js');
 
 module.exports = {
   citiesController,
@@ -12,4 +13,5 @@ module.exports = {
   operationsController,
   rolesController,
   adminsAdvisorsController,
+  profileController,
 };

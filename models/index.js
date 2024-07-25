@@ -4,6 +4,7 @@ const categoriesModel = require('./categories.js');
 const operationsModel = require('./operations.js');
 const rolesModel = require('./roles.js');
 const adminsAdvisorsModel = require('./adminsAdvisors.js');
+const profileModel = require('./profile.js');
 
 module.exports = {
   citiesModel,
@@ -12,4 +13,5 @@ module.exports = {
   operationsModel,
   rolesModel,
   adminsAdvisorsModel,
+  profileModel,
 };
