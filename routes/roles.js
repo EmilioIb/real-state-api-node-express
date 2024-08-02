@@ -3,10 +3,10 @@ const app = express();
 const router = express.Router();
 
 const { rolesController } = require('../controllers/index.js');
-// const { projectsMiddleware } = require('../middlewares//index.middleware');
+const { permissionsMiddleware } = require('../middlewares/index.js');
 
 // * Get admin and advisor roles
-router.get('/admin-advisor', rolesController.getAdminAdvisorRoles);
+router.get('/admin-advisor', permissionsMiddleware.getUserId, rolesController.getAdminAdvisorRoles);
 
 app.use('/roles', router);
 

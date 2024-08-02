@@ -3,7 +3,6 @@ const app = express();
 const router = express.Router();
 
 const { categoriesController } = require('../controllers/index.js');
-// const { projectsMiddleware } = require('../middlewares//index.middleware');
 
 // * Get all categories
 router.get('/', categoriesController.getCategories);

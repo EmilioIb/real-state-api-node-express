@@ -3,19 +3,30 @@ const app = express();
 const router = express.Router();
 
 const { adminsAdvisorsController } = require('../controllers/index.js');
-// const { projectsMiddleware } = require('../middlewares//index.middleware');
+const { permissionsMiddleware, adminsAdvisorsMiddleware } = require('../middlewares/index.js');
 
 // * Get all advisors/admins
-router.get('/', adminsAdvisorsController.getAdminsAdvisors);
+router.get('/', permissionsMiddleware.getUserId, adminsAdvisorsController.getAdminsAdvisors);
 
 // * Create advisors/admins
-router.post('/', adminsAdvisorsController.insertAdminAdvisor);
+router.post('/', permissionsMiddleware.getUserId, adminsAdvisorsMiddleware.insertAdminAdvisor, adminsAdvisorsController.insertAdminAdvisor);
 
 // * Update advisors/admins
-router.put('/:userId', adminsAdvisorsController.updateAdminAdvisor);
+router.put(
+  '/:adminAdvisorId',
+  permissionsMiddleware.getUserId,
+  adminsAdvisorsMiddleware.getAdminAdvisorId,
+  adminsAdvisorsMiddleware.updateAdminAdvisor,
+  adminsAdvisorsController.updateAdminAdvisor
+);
 
 // * Delete advisors/admins
-router.delete('/:userId', adminsAdvisorsController.deleteAdminAdvisor);
+router.delete(
+  '/:adminAdvisorId',
+  permissionsMiddleware.getUserId,
+  adminsAdvisorsMiddleware.getAdminAdvisorId,
+  adminsAdvisorsController.deleteAdminAdvisor
+);
 
 app.use('/admins-advisors', router);
 

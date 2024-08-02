@@ -21,20 +21,20 @@ class AdvisorsAdminsModel {
     }
   };
 
-  updateAdminAdvisor = async (userId, { roleId, email, name, lastName, cellphone, profilePhoto }, userUpdate) => {
+  updateAdminAdvisor = async (adminAdvisorId, { roleId, email, name, lastName, cellphone, profilePhoto }, userId) => {
     try {
       const query = `select users_update_admin_advisor($1, $2, $3, $4, $5, $6, $7, $8);`;
-      const res = await executeQuery(query, [userId, roleId, email, name, lastName, cellphone, profilePhoto, userUpdate], true);
+      const res = await executeQuery(query, [adminAdvisorId, roleId, email, name, lastName, cellphone, profilePhoto, userId], true);
       return res.users_update_admin_advisor;
     } catch (error) {
       throw error;
     }
   };
 
-  deleteAdminAdvisor = async (userId, userDelete) => {
+  deleteAdminAdvisor = async (adminAdvisorId, userId) => {
     try {
       const query = `select users_delete_admin_advisor($1, $2);`;
-      const res = await executeQuery(query, [userId, userDelete], true);
+      const res = await executeQuery(query, [adminAdvisorId, userId], true);
       return res.users_delete_admin_advisor;
     } catch (error) {
       throw error;

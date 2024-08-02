@@ -3,7 +3,7 @@ const { citiesModel } = require('../models/index.js');
 class CitiesController {
   getCities = async (req, res, next) => {
     try {
-      const { userId } = req.query;
+      const { userId } = req;
       const { code, ...response } = await citiesModel.getCities(userId);
       return res.status(code).json(response);
     } catch (error) {
@@ -13,7 +13,7 @@ class CitiesController {
 
   getCitiesFromState = async (req, res, next) => {
     try {
-      const { stateId } = req.query;
+      const { stateId } = req;
       const { code, ...response } = await citiesModel.getCitiesFromState(stateId);
       return res.status(code).json(response);
     } catch (error) {
@@ -23,7 +23,7 @@ class CitiesController {
 
   getCitiesByName = async (req, res, next) => {
     try {
-      const { name } = req.query;
+      const { name } = req;
       const { code, ...response } = await citiesModel.getCitiesByName(name);
       return res.status(code).json(response);
     } catch (error) {
@@ -33,8 +33,7 @@ class CitiesController {
 
   insertCity = async (req, res, next) => {
     try {
-      const city = req.body;
-      const { userId } = req.query;
+      const { city, userId } = req;
       const { code, ...body } = await citiesModel.insertCity(city, userId);
       return res.status(code).json(body);
     } catch (error) {
@@ -44,9 +43,7 @@ class CitiesController {
 
   updateCity = async (req, res, next) => {
     try {
-      const { cityId } = req.params;
-      const { userId } = req.query;
-      const city = req.body;
+      const { cityId, city, userId } = req;
       const { code, ...body } = await citiesModel.updateCity(cityId, city, userId);
       return res.status(code).json(body);
     } catch (error) {
@@ -56,8 +53,7 @@ class CitiesController {
 
   deleteCity = async (req, res, next) => {
     try {
-      const { cityId } = req.params;
-      const { userId } = req.query;
+      const { cityId, userId } = req;
       const { code, ...body } = await citiesModel.deleteCity(cityId, userId);
       return res.status(code).json(body);
     } catch (error) {

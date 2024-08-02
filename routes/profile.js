@@ -3,13 +3,18 @@ const app = express();
 const router = express.Router();
 
 const { profileController } = require('../controllers/index.js');
-// const { projectsMiddleware } = require('../middlewares//index.middleware');
+const { adminsAdvisorsMiddleware } = require('../middlewares/index');
 
 // * Get all advisors/admins
-router.get('/admins-advisors/:userId', profileController.getAdminAdvisorProfile);
+router.get('/admins-advisors/:adminAdvisorId', adminsAdvisorsMiddleware.getAdminAdvisorId, profileController.getAdminAdvisorProfile);
 
 // * Update advisors/admins
-router.put('/admins-advisors/:userId', profileController.updateAdminAdvisorProfile);
+router.put(
+  '/admins-advisors/:adminAdvisorId',
+  adminsAdvisorsMiddleware.getAdminAdvisorId,
+  adminsAdvisorsMiddleware.updateProfile,
+  profileController.updateAdminAdvisorProfile
+);
 
 app.use('/profile', router);
 
