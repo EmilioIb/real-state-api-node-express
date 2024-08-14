@@ -1,7 +1,7 @@
 const { citiesValidator } = require('../validators/index');
 const errorsUtils = require('../utils/errors');
 
-class citiesMiddleware {
+class CitiesMiddleware {
   getCitiesFromState = (req, res, next) => {
     try {
       const schema = citiesValidator.getCitiesFromState;
@@ -46,4 +46,4 @@ class citiesMiddleware {
   };
 }
 
-module.exports = new citiesMiddleware();
+module.exports = new CitiesMiddleware();
