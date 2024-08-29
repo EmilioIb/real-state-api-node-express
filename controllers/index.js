@@ -6,6 +6,7 @@ const rolesController = require('./roles.js');
 const adminsAdvisorsController = require('./adminsAdvisors.js');
 const profileController = require('./profile.js');
 const propertyTypesController = require('./propertyTypes.js');
+const propertiesController = require('./properties.js');
 
 module.exports = {
   citiesController,
@@ -16,4 +17,5 @@ module.exports = {
   adminsAdvisorsController,
   profileController,
   propertyTypesController,
+  propertiesController,
 };

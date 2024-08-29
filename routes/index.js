@@ -9,5 +9,6 @@ app.use(require('./roles.js'));
 app.use(require('./adminsAdvisors.js'));
 app.use(require('./profile.js'));
 app.use(require('./propertyTypes.js'));
+app.use(require('./properties.js'));
 
 module.exports = app;
