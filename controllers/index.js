@@ -7,6 +7,7 @@ const adminsAdvisorsController = require('./adminsAdvisors.js');
 const profileController = require('./profile.js');
 const propertyTypesController = require('./propertyTypes.js');
 const propertiesController = require('./properties.js');
+const authController = require('./auth.js');
 
 module.exports = {
   citiesController,
@@ -18,4 +19,5 @@ module.exports = {
   profileController,
   propertyTypesController,
   propertiesController,
+  authController,
 };

@@ -10,5 +10,6 @@ app.use(require('./adminsAdvisors.js'));
 app.use(require('./profile.js'));
 app.use(require('./propertyTypes.js'));
 app.use(require('./properties.js'));
+app.use(require('./auth.js'));
 
 module.exports = app;

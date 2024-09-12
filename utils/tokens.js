@@ -1,6 +1,4 @@
-const bcrypt = require('bcrypt');
-
-class PasswordsUtils {
+class TokensUtils {
   hashPassword = async passwordToHash => {
     try {
       const salt = await bcrypt.genSalt(10);
@@ -19,4 +17,4 @@ class PasswordsUtils {
   };
 }
 
-module.exports = new PasswordsUtils();
+module.exports = new TokensUtils();

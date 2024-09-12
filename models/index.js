@@ -7,6 +7,7 @@ const adminsAdvisorsModel = require('./adminsAdvisors.js');
 const profileModel = require('./profile.js');
 const propertyTypesModel = require('./propertyTypes.js');
 const propertiesModel = require('./properties.js');
+const authModel = require('./auth.js');
 
 module.exports = {
   citiesModel,
@@ -18,4 +19,5 @@ module.exports = {
   profileModel,
   propertyTypesModel,
   propertiesModel,
+  authModel,
 };

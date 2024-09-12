@@ -3,6 +3,7 @@ const adminsAdvisorsMiddleware = require('./adminsAdvisors');
 const citiesMiddleware = require('./cities');
 const propertyTypesMiddleware = require('./propertyTypes');
 const propertiesMiddleware = require('./properties');
+const authMiddleware = require('./auth');
 
 module.exports = {
   permissionsMiddleware,
@@ -10,4 +11,5 @@ module.exports = {
   citiesMiddleware,
   propertyTypesMiddleware,
   propertiesMiddleware,
+  authMiddleware,
 };
